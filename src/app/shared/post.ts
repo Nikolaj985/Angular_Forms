@@ -3,5 +3,6 @@ export interface Post {
   author: string;
   title: string;
   content: string;
-  img?: string
+  img?: string;
+  likes: number;
 }
