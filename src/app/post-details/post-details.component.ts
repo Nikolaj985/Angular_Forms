@@ -23,15 +23,8 @@ export class PostDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.posts$ = this.postService.loadPosts().pipe(
-      map((posts) => {
-        return posts.filter((post) => {
-          return !!post.img;
-        });
-      })
-    );
     const id: string = this.route.snapshot.paramMap.get('id');
-    this.post$ = this.postService.getPost(+id);
+    this.post$ = this.postService.getPost(id);
   }
   addLike(post) {
     this.postService.addLike(post);

@@ -27,10 +27,10 @@ export class PostService implements OnInit {
   }
   addLike(post: Post) {
     post.likes++;
-    this.httpClient.put('/api/posts/' + post.id, post).subscribe();
+    return this.httpClient.put('/api/posts/' + post.id, post);
   }
   removeLike(post: Post) {
     post.likes--;
-    this.httpClient.put('/api/posts/' + post.id, post).subscribe();
+    return this.httpClient.put('/api/posts/' + post.id, post);
   }
 }
