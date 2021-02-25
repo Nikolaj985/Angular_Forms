@@ -46,6 +46,30 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cupiditate dolorem doloremque dolorum fugiat saepe sint soluta ullam voluptates voluptatum?",
       "img": "assets/photo-5.jpeg",
       "likes": 1
+    },
+    {
+      "id": "plvXVoZ",
+      "author": "James Bond",
+      "title": "Tyson",
+      "content": "Michael Gerard Tyson (born June 30, 1966) is an American former professional boxer who competed from 1985 to 2005. Nicknamed \"Iron Mike\"[3] and \"Kid Dynamite\" in his early career, and later known as \"The Baddest Man on the Planet\",[4] Tyson is considered one of the best heavyweight boxers of all time.[5] He reigned as the undisputed world heavyweight champion from 1987 to 1990. Claiming his first belt at 20 years, four months, and 22 days old, Tyson holds the record as the youngest boxer to win a heavyweight title.[6]",
+      "img": "https://e0.365dm.com/20/05/2048x1152/skysports-mike-tyson-boxing_4990864.jpg",
+      "likes": 0
+    },
+    {
+      "id": "PDwPqst",
+      "author": "Alex",
+      "title": "Best Title",
+      "content": "As elements are added to an ArrayList, its capacity grows automatically. ... or explicitly resizes the backing array; merely setting the value of an element is not a structural modification. ... (In other words, this method must allocate a new array).",
+      "img": "https://miro.medium.com/max/700/1*rcCWSEPj62I2OuNSrdhBKw.jpeg",
+      "likes": 0
+    },
+    {
+      "id": "tIQ_Lym",
+      "author": "Wikipedia",
+      "title": "Tasmania",
+      "content": "Tasmania (/tæzˈmeɪniə/;[8] abbreviated as TAS, nicknamed Tassie, Bruny Island Tasmanian: Lutruwita; Palawa kani: Lutruwita) is an island state of Australia. It is located 240 km (150 mi) to the south of the Australian mainland, separated by Bass Strait. The state encompasses the main island of Tasmania, the 26th-largest island in the world, and the surrounding 334 islands.[9] The state has a population of about 540,600 people as of June 2020.[1] The state capital and largest city is Hobart, with around 40 percent of the population living in the Greater Hobart area.[10]",
+      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e6/Tasmania_in_Australia.svg/1001px-Tasmania_in_Australia.svg.png",
+      "likes": 8
     }
   ]
 }

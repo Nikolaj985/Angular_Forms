@@ -1,0 +1,6 @@
+<h2>Recent posts</h2>
+<ul class="nav flex-column" *ngFor="let post of post$ | async">
+  <li class="nav-item">
+    <a [routerLink]="['/post', post.id]" class="nav-link">{{ post.title }}</a>
+  </li>
+</ul>

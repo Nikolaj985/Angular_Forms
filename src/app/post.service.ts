@@ -5,7 +5,7 @@ import { Observable, Subscription } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
 import { ParsedHostBindings } from '@angular/compiler';
-import { environment } from '../environments/environment';
+//import { environment } from '../environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -14,7 +14,7 @@ export class PostService implements OnInit {
   private posts: Post[];
   private subscription: Subscription;
   private post: Post;
-  private apiEndpoint = environment.baseUrl;
+  //private apiEndpoint = environment.baseUrl;
 
   constructor(private httpClient: HttpClient) {}
   ngOnInit(): void {}
@@ -32,5 +32,9 @@ export class PostService implements OnInit {
   removeLike(post: Post) {
     post.likes--;
     return this.httpClient.put('/api/posts/' + post.id, post);
+  }
+
+  addNewPost(post: Post) {
+    return this.httpClient.post('/api/posts', post);
   }
 }

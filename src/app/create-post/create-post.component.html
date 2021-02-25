@@ -1,0 +1,80 @@
+<form [formGroup]="AddNewPostForm" (ngSubmit)="createPost()" method="post">
+  <ul>
+    <li>
+      <label for="author">Author</label>
+      <input name="author" type="text" formControlName="postAuthor" />
+    </li>
+    <div
+      [hidden]="
+        AddNewPostForm.controls.postAuthor.valid ||
+        AddNewPostForm.controls.postAuthor.pristine
+      "
+    >
+      <div *ngIf="postAuthor.errors?.required">Author required!!!</div>
+
+      <div *ngIf="postAuthor.errors?.asyncError">Author not autorised!!!!</div>
+    </div>
+    <div
+      [hidden]="AddNewPostForm.controls.postAuthor.pristine"
+      *ngIf="!postAuthor.errors?.customEmtyValueValidator"
+    >
+      Field cannot'be empty!!!!!!!
+    </div>
+    <li>
+      <label for="img">Image Url:</label>
+      <input
+        class="image"
+        name="img"
+        formControlName="postImageUrl"
+        type="text"
+      />
+    </li>
+    <div [hidden]="AddNewPostForm.controls.postImageUrl.pristine">
+      <div><img src="{{ postImageUrl.value }}" width="200" alt="" /></div>
+    </div>
+    <li>
+      <label for="title">Title</label>
+      <input name="title" formControlName="postTitle" type="text" />
+    </li>
+
+    <div *ngIf="AddNewPostForm.controls.postTitle.errors?.customError">
+      No explicit language allowed!!!!
+    </div>
+    <div
+      [hidden]="AddNewPostForm.controls.postAuthor.pristine"
+      *ngIf="AddNewPostForm.errors?.titleError"
+    >
+      No Author name in Title is allowed!!!
+    </div>
+    <div
+      [hidden]="
+        AddNewPostForm.controls.postTitle.valid ||
+        AddNewPostForm.controls.postTitle.pristine
+      "
+    >
+      <div *ngIf="AddNewPostForm.controls.postTitle.errors?.required">
+        Title required!!!
+      </div>
+    </div>
+
+    <div [hidden]="AddNewPostForm.controls.postTitle.pristine">
+      <div>Max length is 50 chars, you can type {{ maxLength }} more chars</div>
+    </div>
+    <li>
+      <label for="content">Content</label>
+      <input name="content" formControlName="postContent" type="text" />
+      <div
+        [hidden]="
+          AddNewPostForm.controls.postContent.valid ||
+          AddNewPostForm.controls.postContent.pristine
+        "
+      >
+        <div *ngIf="AddNewPostForm.controls.postContent.errors?.required">
+          Content required!!!
+        </div>
+      </div>
+    </li>
+  </ul>
+  <button type="submit" [disabled]="!AddNewPostForm">Submit</button
+  ><button type="reset">Reset</button>
+</form>

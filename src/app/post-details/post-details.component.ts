@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { PostService } from '../post.service';
 import { Post } from '../shared/post';
-import { map } from 'rxjs/operators';
+import { map, tap } from 'rxjs/operators';
 import { postList } from '../shared/post-list';
 
 @Component({
@@ -23,8 +23,12 @@ export class PostDetailsComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    const id: string = this.route.snapshot.paramMap.get('id');
-    this.post$ = this.postService.getPost(id);
+    this.route.params.pipe(tap((data) =>{
+      this.post$ = this.postService.getPost(data.id);
+    }
+    )).subscribe();
+    //const id: string = this.route;
+    //this.post$ = this.postService.getPost(id);
   }
   addLike(post) {
     this.postService.addLike(post);

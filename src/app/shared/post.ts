@@ -4,5 +4,5 @@ export interface Post {
   title: string;
   content: string;
   img?: string;
-  likes: number;
+  likes?: number;
 }

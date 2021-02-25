@@ -19,7 +19,7 @@ export class PostGuardGuard implements CanActivate {
     | Promise<boolean | UrlTree>
     | boolean
     | UrlTree {
-    if (next.paramMap.get('id') === '5') {
+    if (next.paramMap.get('id') === '6') {
       return false;
     }
 

@@ -9,6 +9,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">About</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['new-post']">Add New Post</a>
+        </li>
         <li class="nav-item dropdown">
           <a
             class="nav-link dropdown-toggle"
@@ -35,13 +38,9 @@
 <div class="container">
   <div class="row">
     <div class="col-3">
-      <h2>Recent posts</h2>
-      <ul class="nav flex-column">
-        <li class="nav-item"><a href="#" class="nav-link">Post #1</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Post #2</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Post #3</a></li>
-      </ul>
+      <app-recent-posts></app-recent-posts>
     </div>
+
     <div class="col-9">
       <router-outlet></router-outlet>
     </div>

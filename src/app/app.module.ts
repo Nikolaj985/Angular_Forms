@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PostComponent } from './post/post.component';
 import { PostDetailsComponent } from './post-details/post-details.component';
 import { RouterModule, Routes } from '@angular/router';
+import { RecentPostsComponent } from './recent-posts/recent-posts.component';
+import { CreatePostComponent } from './create-post/create-post.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,16 @@ import { RouterModule, Routes } from '@angular/router';
     HomeComponent,
     PostComponent,
     PostDetailsComponent,
+    RecentPostsComponent,
+    CreatePostComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
